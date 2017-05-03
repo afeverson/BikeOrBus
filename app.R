@@ -49,7 +49,7 @@ m_wind <- (weather_now$Wind_High_mph - min(chi_data$Wind_Avg_mph))/(max(chi_data
 m_comp <- (40*m_temp)+(40*m_precip)+(20*m_wind)
 misery_now <- 100*(1-((m_comp - min(chi_data$m_comp))/(max(chi_data$m_comp) - min(chi_data$m_comp))))
 
-# Define UI for application that draws a histogram
+# Define UI for application
 ui <- navbarPage(
    theme="bootstrap.css",
    
@@ -133,7 +133,7 @@ ui <- navbarPage(
   )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic required
 server <- function(input, output) {
   
   inputData <- reactive({
